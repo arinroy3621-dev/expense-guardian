@@ -13,11 +13,14 @@ const LoginPage = () => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    const err = login(userId, password);
+    setLoading(true);
+    const err = await login(userId, password);
+    setLoading(false);
     if (err) {
       setError(err);
     } else {
@@ -27,7 +30,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-2">
           <div className="mx-auto p-3 rounded-2xl bg-primary/20 w-fit">
@@ -46,6 +49,7 @@ const LoginPage = () => {
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
                 required
+                disabled={loading}
               />
             </div>
             <div className="space-y-2">
@@ -57,6 +61,7 @@ const LoginPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                disabled={loading}
               />
             </div>
             {error && (
@@ -65,8 +70,8 @@ const LoginPage = () => {
                 <span>{error}</span>
               </div>
             )}
-            <Button type="submit" className="w-full">
-              Login
+            <Button type="submit" className="w-full" disabled={loading}>
+              {loading ? 'Logging in...' : 'Login'}
             </Button>
           </form>
 
@@ -85,6 +90,10 @@ const LoginPage = () => {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-4 text-xs text-muted-foreground">
+        Developed by Code_Error!
+      </div>
     </div>
   );
 };
