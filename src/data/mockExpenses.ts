@@ -31,7 +31,6 @@ export const mockExpenses: ExpenseEntry[] = [
     category: 'food', status: 'pending', route: 'Lucknow → Varanasi',
     distanceKm: 300, receiptImageUrl: '/placeholder.svg',
     submittedAt: '2025-03-09T12:00:00Z',
-    isAnomaly: true, anomalyReason: 'Food bill ₹5,000 exceeds typical range (₹200-₹800)',
   },
   {
     id: 'EXP-005', driverId: 'D01', driverName: 'Rajesh Kumar',
