@@ -47,7 +47,7 @@ const DriverDashboard = () => {
           <Route className="w-5 h-5 text-success" />
           <div>
             <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Reimbursed</p>
-            <p className="font-mono font-bold text-lg text-emerald-400">₹{totalReimbursed.toLocaleString('en-IN')}</p>
+            <p className="font-mono font-bold text-lg text-success">₹{totalReimbursed.toLocaleString('en-IN')}</p>
           </div>
         </Card>
       </div>

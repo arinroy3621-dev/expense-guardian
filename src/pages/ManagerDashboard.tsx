@@ -106,7 +106,7 @@ const ManagerDashboard = () => {
             <Check className="w-8 h-8 text-success" />
             <div>
               <p className="text-xs text-muted-foreground uppercase tracking-wider">Total Approved</p>
-              <p className="font-mono text-2xl font-bold text-emerald-400">₹{totalApproved.toLocaleString('en-IN')}</p>
+              <p className="font-mono text-2xl font-bold text-success">₹{totalApproved.toLocaleString('en-IN')}</p>
             </div>
           </Card>
         </div>
