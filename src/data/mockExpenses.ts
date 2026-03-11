@@ -46,7 +46,6 @@ export const mockExpenses: ExpenseEntry[] = [
     category: 'toll', status: 'pending', route: 'Chennai → Bangalore',
     distanceKm: 350, receiptImageUrl: '/placeholder.svg',
     submittedAt: '2025-03-08T11:00:00Z',
-    isAnomaly: true, anomalyReason: 'Duplicate receipt detected — matches EXP-012',
   },
   {
     id: 'EXP-007', driverId: 'D05', driverName: 'Mohan Patel',
