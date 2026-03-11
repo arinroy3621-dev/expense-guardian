@@ -19,7 +19,9 @@ const categoryIcons: Record<string, React.ReactNode> = {
 };
 
 const ManagerDashboard = () => {
-  const [expenses, setExpenses] = useState<ExpenseEntry[]>(mockExpenses);
+  const [expenses, setExpenses] = useState<ExpenseEntry[]>(() =>
+    applyAnomalyDetection(mockExpenses)
+  );
   const [filter, setFilter] = useState<'all' | 'pending' | 'anomaly'>('pending');
 
   const filtered = expenses.filter((e) => {
