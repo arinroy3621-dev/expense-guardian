@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { LogIn, AlertCircle } from 'lucide-react';
+import { LogIn, CircleAlert as AlertCircle } from 'lucide-react';
 
 const LoginPage = () => {
   const { login } = useAuth();

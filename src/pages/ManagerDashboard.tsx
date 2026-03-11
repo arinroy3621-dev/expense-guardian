@@ -3,10 +3,7 @@ import { ExpenseEntry } from '@/types/expense';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  AlertTriangle, Check, X, Download, Fuel, Landmark,
-  UtensilsCrossed, Wrench, Package, BarChart3, Users,
-} from 'lucide-react';
+import { TriangleAlert as AlertTriangle, Check, X, Download, Fuel, Landmark, UtensilsCrossed, Wrench, Package, ChartBar as BarChart3, Users } from 'lucide-react';
 import { supabase, DbExpense } from '@/lib/supabase';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from '@/hooks/use-toast';
