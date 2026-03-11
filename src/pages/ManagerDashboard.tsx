@@ -78,7 +78,7 @@ const ManagerDashboard = () => {
               <BarChart3 className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-xl font-bold">Fleet Expense Manager</h1>
+              <h1 className="text-xl font-bold">KharchaBook Manager</h1>
               <p className="text-xs text-muted-foreground">Finance & Approvals</p>
             </div>
           </div>
