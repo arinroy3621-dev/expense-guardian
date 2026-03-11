@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { mockExpenses } from '@/data/mockExpenses';
+import { applyAnomalyDetection } from '@/lib/anomalyDetection';
 import { ExpenseEntry } from '@/types/expense';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
