@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { Truck, IndianRupee, Route } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import ReceiptUpload from '@/components/driver/ReceiptUpload';
+import VoiceTripLog from '@/components/driver/VoiceTripLog';
 import ExpenseList from '@/components/driver/ExpenseList';
 import { mockExpenses } from '@/data/mockExpenses';
 import { ExpenseEntry } from '@/types/expense';
 
 const DriverDashboard = () => {
   const driverId = 'D01';
-  const [expenses] = useState<ExpenseEntry[]>(
+  const [expenses, setExpenses] = useState<ExpenseEntry[]>(
     mockExpenses.filter((e) => e.driverId === driverId)
   );
 
@@ -18,6 +19,26 @@ const DriverDashboard = () => {
   const totalReimbursed = settled
     .filter((e) => e.status === 'approved')
     .reduce((s, e) => s + e.amount, 0);
+
+  const handleTripLogged = (data: any) => {
+    const newEntry: ExpenseEntry = {
+      id: `EXP-${String(expenses.length + 21).padStart(3, '0')}`,
+      driverId,
+      driverName: 'Rajesh Kumar',
+      vendorName: data.vendorName || `${data.category} expense`,
+      amount: data.amount || Math.round(data.fuelLiters * data.fuelPricePerLiter) || 0,
+      date: new Date().toISOString().split('T')[0],
+      category: data.category,
+      status: 'pending',
+      route: `${data.from} → ${data.to}`,
+      distanceKm: data.distanceKm,
+      fuelLiters: data.fuelLiters || undefined,
+      fuelPricePerLiter: data.fuelPricePerLiter || undefined,
+      notes: data.notes,
+      submittedAt: new Date().toISOString(),
+    };
+    setExpenses((prev) => [newEntry, ...prev]);
+  };
 
   return (
     <div className="min-h-screen pb-6">
@@ -55,6 +76,11 @@ const DriverDashboard = () => {
       {/* Receipt Upload */}
       <div className="px-4 mb-4">
         <ReceiptUpload onReceiptProcessed={(data) => console.log('OCR:', data)} />
+      </div>
+
+      {/* Voice Trip Log */}
+      <div className="px-4 mb-4">
+        <VoiceTripLog onTripLogged={handleTripLogged} />
       </div>
 
       {/* Expense Lists */}

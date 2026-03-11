@@ -31,7 +31,6 @@ export const mockExpenses: ExpenseEntry[] = [
     category: 'food', status: 'pending', route: 'Lucknow → Varanasi',
     distanceKm: 300, receiptImageUrl: '/placeholder.svg',
     submittedAt: '2025-03-09T12:00:00Z',
-    isAnomaly: true, anomalyReason: 'Food bill ₹5,000 exceeds typical range (₹200-₹800)',
   },
   {
     id: 'EXP-005', driverId: 'D01', driverName: 'Rajesh Kumar',
@@ -47,7 +46,6 @@ export const mockExpenses: ExpenseEntry[] = [
     category: 'toll', status: 'pending', route: 'Chennai → Bangalore',
     distanceKm: 350, receiptImageUrl: '/placeholder.svg',
     submittedAt: '2025-03-08T11:00:00Z',
-    isAnomaly: true, anomalyReason: 'Duplicate receipt detected — matches EXP-012',
   },
   {
     id: 'EXP-007', driverId: 'D05', driverName: 'Mohan Patel',
@@ -70,7 +68,6 @@ export const mockExpenses: ExpenseEntry[] = [
     category: 'fuel', status: 'pending', route: 'Delhi → Chandigarh',
     distanceKm: 250, fuelLiters: 80, fuelPricePerLiter: 104.5,
     receiptImageUrl: '/placeholder.svg', submittedAt: '2025-03-06T07:00:00Z',
-    isAnomaly: true, anomalyReason: 'Fuel 80L exceeds truck capacity for 250km route (~35L expected)',
   },
   {
     id: 'EXP-010', driverId: 'D04', driverName: 'Vikram Singh',
