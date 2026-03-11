@@ -51,8 +51,8 @@ const DriverDashboard = () => {
             <Truck className="w-6 h-6 text-primary" />
           </div>
           <div>
-            <h1 className="text-lg font-bold">Rajesh Kumar</h1>
-            <p className="text-xs text-muted-foreground">Driver · Vehicle MH-12-AB-1234</p>
+            <h1 className="text-lg font-bold">{user?.name || 'Driver'}</h1>
+            <p className="text-xs text-muted-foreground">Driver · Vehicle {user?.vehicle || 'N/A'}</p>
           </div>
         </div>
       </div>
