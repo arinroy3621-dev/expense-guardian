@@ -68,7 +68,6 @@ export const mockExpenses: ExpenseEntry[] = [
     category: 'fuel', status: 'pending', route: 'Delhi → Chandigarh',
     distanceKm: 250, fuelLiters: 80, fuelPricePerLiter: 104.5,
     receiptImageUrl: '/placeholder.svg', submittedAt: '2025-03-06T07:00:00Z',
-    isAnomaly: true, anomalyReason: 'Fuel 80L exceeds truck capacity for 250km route (~35L expected)',
   },
   {
     id: 'EXP-010', driverId: 'D04', driverName: 'Vikram Singh',
