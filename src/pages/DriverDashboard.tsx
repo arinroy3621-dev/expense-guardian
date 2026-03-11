@@ -6,9 +6,11 @@ import VoiceTripLog from '@/components/driver/VoiceTripLog';
 import ExpenseList from '@/components/driver/ExpenseList';
 import { mockExpenses } from '@/data/mockExpenses';
 import { ExpenseEntry } from '@/types/expense';
+import { useAuth } from '@/contexts/AuthContext';
 
 const DriverDashboard = () => {
-  const driverId = 'D01';
+  const { user } = useAuth();
+  const driverId = user?.id || 'D01';
   const [expenses, setExpenses] = useState<ExpenseEntry[]>(
     mockExpenses.filter((e) => e.driverId === driverId)
   );
