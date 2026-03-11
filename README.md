@@ -1,13 +1,4 @@
-<h1 align="center">expense-guardian</h1>
 
-<p align="center">Your intelligent companion for effortlessly tracking, categorizing, and mastering personal finances.</p>
-
-<p align="center">
-  <img alt="Build Status" src="https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square" />
-  <img alt="License" src="https://img.shields.io/github/license/your-username/expense-guardian?style=flat-square&color=blue" />
-  <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" />
-  <img alt="GitHub Stars" src="https://img.shields.io/github/stars/your-username/expense-guardian?style=social" />
-</p>
 
 ---
 
